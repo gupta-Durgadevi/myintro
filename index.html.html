@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Durgadevi Gupta – Full-Stack & ML Developer</title>
+<meta name="description" content="Portfolio of Durgadevi Gupta, a B.Tech Computer Science graduate building full-stack web apps and machine learning projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6FB; --surface:#FFFFFF; --ink:#13203B; --muted:#55627C; --line:#D9DFEC;
+  --accent:#2C58E0; --accent-ink:#FFFFFF; --mint:#0E9F83; --chip:#E8EDFB;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1526; --surface:#162037; --ink:#E8EDFA; --muted:#9AA7C4; --line:#27345A;
+    --accent:#7C9CFF; --accent-ink:#0E1526; --mint:#3DDBB9; --chip:#1E2B4A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1526; --surface:#162037; --ink:#E8EDFA; --muted:#9AA7C4; --line:#27345A;
+  --accent:#7C9CFF; --accent-ink:#0E1526; --mint:#3DDBB9; --chip:#1E2B4A; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif; font-size:1.05rem; line-height:1.6}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; line-height:1.1; margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:4px}
+.wrap{max-width:1100px; margin:0 auto; padding:2rem 1.25rem 3rem; display:grid; gap:2.5rem}
+@media(min-width:900px){.wrap{grid-template-columns:300px 1fr; gap:4rem; padding-top:3rem}}
+
+/* sidebar */
+aside{align-self:start}
+@media(min-width:900px){aside{position:sticky; top:2rem}}
+.name{font-size:clamp(2.4rem,6vw,3.2rem); font-weight:800; letter-spacing:-.02em}
+.role{margin:.75rem 0 0; color:var(--muted); font-size:1.1rem}
+nav{margin:1.75rem 0; display:flex; flex-wrap:wrap; gap:.4rem 1.1rem}
+@media(min-width:900px){nav{flex-direction:column; gap:.35rem}}
+nav a{color:var(--ink); text-decoration:none; font-weight:600}
+nav a:hover{color:var(--accent)}
+.contact{display:grid; gap:.3rem; font-size:.98rem}
+.contact a{color:var(--ink); text-decoration-color:var(--line); text-underline-offset:3px}
+.contact a:hover{color:var(--accent)}
+.toggle{margin-top:1.5rem; background:none; border:1px solid var(--line); color:var(--ink); padding:.4rem .8rem; border-radius:999px; font:inherit; font-size:.9rem; cursor:pointer}
+
+/* hero */
+.hero h2{font-size:clamp(1.9rem,4.4vw,2.9rem); font-weight:700; letter-spacing:-.02em; max-width:20ch}
+.hero p{max-width:60ch; color:var(--muted); margin:1rem 0 1.5rem}
+.btns{display:flex; flex-wrap:wrap; gap:.75rem}
+.btn{display:inline-block; padding:.7rem 1.2rem; border-radius:10px; font-weight:600; text-decoration:none}
+.btn.primary{background:var(--accent); color:var(--accent-ink)}
+.btn.ghost{border:1px solid var(--line); color:var(--ink)}
+.btn:hover{filter:brightness(1.08)}
+
+/* flow strip: the one memorable element */
+.flow{margin:2.25rem 0 0; padding:1.25rem; background:var(--surface); border:1px solid var(--line); border-radius:14px}
+.flow h3{font-size:1rem; font-weight:700; color:var(--muted); margin-bottom:1rem}
+.track{position:relative; display:grid; grid-template-columns:1fr; gap:1rem}
+@media(min-width:620px){.track{grid-template-columns:repeat(3,1fr); gap:2.5rem}}
+.node{position:relative; padding:.9rem 1rem; border:1.5px solid var(--ink); border-radius:10px; background:var(--bg)}
+.node b{display:block; font-family:"Bricolage Grotesque",system-ui,sans-serif; font-size:1.05rem}
+.node span{font-size:.92rem; color:var(--muted)}
+@media(min-width:620px){
+  .node:not(:last-child)::after{content:""; position:absolute; top:50%; left:100%; width:2.5rem; height:2px; background:var(--ink)}
+  .node:not(:last-child)::before{content:""; position:absolute; top:calc(50% - 4px); left:100%; width:10px; height:10px; border-radius:50%; background:var(--mint); z-index:1; animation:send 2.4s ease-in-out 3 }
+}
+@keyframes send{0%{transform:translateX(0); opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateX(2.1rem); opacity:0}}
+
+/* sections */
+section{padding-top:3rem}
+section:first-of-type{padding-top:0}
+h2.sec{font-size:1.7rem; font-weight:700; margin-bottom:1.25rem; letter-spacing:-.01em}
+.proj{display:grid; gap:1rem}
+@media(min-width:640px){.proj{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:1.25rem; display:flex; flex-direction:column; gap:.6rem}
+.card h3{font-size:1.2rem}
+.card p{margin:0; color:var(--muted)}
+.tags{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:auto; padding-top:.4rem}
+.tag{background:var(--chip); color:var(--ink); padding:.2rem .65rem; border-radius:999px; font-size:.88rem}
+.job{border-left:3px solid var(--accent); padding-left:1.1rem}
+.job h3{font-size:1.25rem}
+.job .meta{color:var(--muted); margin:.2rem 0 .6rem}
+.job ul{margin:0; padding-left:1.1rem}
+.skills{display:grid; gap:1rem}
+@media(min-width:640px){.skills{grid-template-columns:1fr 1fr}}
+.skills h3{font-size:1rem; margin-bottom:.5rem}
+.edu{display:grid; gap:1rem}
+.edu div{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:.8rem}
+.edu b{font-weight:600}
+.edu small{color:var(--muted); font-size:.95rem}
+.certs{margin:0; padding-left:1.1rem; display:grid; gap:.3rem}
+.contact-box{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:1.5rem}
+.contact-box p{margin:.5rem 0 1.25rem; max-width:55ch; color:var(--muted)}
+footer{margin-top:3rem; color:var(--muted); font-size:.9rem}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} .node::before{animation:none!important; display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <h1 class="name">Durgadevi Gupta</h1>
+    <p class="role">Full-stack developer and machine learning enthusiast, Hyderabad</p>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="contact">
+      <a href="mailto:guptadurgadevi@gmail.com">guptadurgadevi@gmail.com</a>
+      <a href="tel:+919347269139">+91 93472 69139</a>
+      <a href="https://github.com/gupta-Durgadevi" rel="noopener">GitHub: gupta-Durgadevi</a>
+      <span>LinkedIn: Gupta Durgadevi</span>
+    </div>
+    <button class="toggle" id="theme" type="button" aria-label="Switch between light and dark theme">Switch theme</button>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <h2>I build web apps that work, and models that learn.</h2>
+      <p>I’m a B.Tech Computer Science graduate (8.55 CGPA) with hands-on experience in React.js, Node.js and Spring Boot, plus machine learning and data analysis in Python. I’m looking for an entry-level role in software development, web development, Python development, testing or data analytics.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">View my projects</a>
+        <a class="btn ghost" href="#contact">Contact me</a>
+      </div>
+      <div class="flow">
+        <h3>How I work, from screen to model</h3>
+        <div class="track">
+          <div class="node"><b>React.js</b><span>Interface people use</span></div>
+          <div class="node"><b>Node.js REST API</b><span>Tested with Postman</span></div>
+          <div class="node"><b>Python ML</b><span>Scikit-learn, NLP</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="sec">Projects</h2>
+      <div class="proj">
+        <article class="card">
+          <h3>Enhanced Spam Comment Detection</h3>
+          <p>A machine learning model that classifies comments and filters out spam using NLP techniques.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">NLP</span></div>
+        </article>
+        <article class="card">
+          <h3>Healthcare Cost Analysis Dashboard</h3>
+          <p>A Power BI dashboard showing how healthcare costs are distributed, built on cleaned and preprocessed data.</p>
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">Data analysis</span></div>
+        </article>
+        <article class="card">
+          <h3>Crop Recommendation using AI and ML</h3>
+          <p>Predicts suitable crops from soil nutrients, temperature, humidity, rainfall and pH values.</p>
+          <div class="tags"><span class="tag">Machine learning</span><span class="tag">AI</span></div>
+        </article>
+        <article class="card">
+          <h3>Stress Detection from Social Media</h3>
+          <p>Analyses social media posts with NLP to identify stress levels and classify emotions in text.</p>
+          <div class="tags"><span class="tag">Machine learning</span><span class="tag">NLP</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="sec">Experience</h2>
+      <div class="job">
+        <h3>MERN Stack Developer Intern</h3>
+        <p class="meta">Arah Infotech, Hyderabad · Jan 2026 – Mar 2026</p>
+        <ul>
+          <li>Developed and maintained full-stack web applications with React.js and Node.js.</li>
+          <li>Worked on frontend-backend integration, debugging and REST API implementation.</li>
+          <li>Improved performance and user experience through enhancements and issue fixes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="sec">Skills</h2>
+      <div class="skills">
+        <div><h3>Programming</h3><div class="tags"><span class="tag">Java</span><span class="tag">Python</span><span class="tag">C</span><span class="tag">JavaScript</span></div></div>
+        <div><h3>Web and full stack</h3><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">REST APIs</span></div></div>
+        <div><h3>Java technologies</h3><div class="tags"><span class="tag">OOPs</span><span class="tag">Spring</span><span class="tag">Spring Boot</span></div></div>
+        <div><h3>Databases</h3><div class="tags"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">DBMS</span></div></div>
+        <div><h3>Data and AI</h3><div class="tags"><span class="tag">NumPy</span><span class="tag">pandas</span><span class="tag">matplotlib</span><span class="tag">Power BI</span><span class="tag">Scikit-learn</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">NLP</span></div></div>
+        <div><h3>Tools and concepts</h3><div class="tags"><span class="tag">Git</span><span class="tag">Postman</span><span class="tag">VS Code</span><span class="tag">Data structures</span><span class="tag">Time-series analysis</span></div></div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="sec">Education and certifications</h2>
+      <div class="edu">
+        <div><span><b>B.Tech, Computer Science Engineering</b><br><small>St. Mary’s Group of Institutions, Hyderabad</small></span><span>2022–2026 · 8.55 CGPA</span></div>
+        <div><span><b>Intermediate (MPC)</b><br><small>JP Education Academy, New Delhi</small></span><span>2020–2022 · 82.8%</span></div>
+        <div><span><b>SSC</b><br><small>Sri Sai Chaitanya High School, Hyderabad</small></span><span>2020 · 10 CGPA</span></div>
+      </div>
+      <h3 style="margin:1.75rem 0 .75rem;font-size:1.1rem">Certifications</h3>
+      <ul class="certs">
+        <li>Java Programming Bootcamp, Udemy</li>
+        <li>Java and Python Course Completion, Besant Technology</li>
+        <li>Postman API Fundamentals Student Expert, Let’s Upgrade</li>
+        <li>AI Skills Passport, EY and Microsoft</li>
+        <li>AI for All participation and AI Appreciate stage completion, Intel and CBSE</li>
+        <li>Web Development, App Development and Cybersecurity, Apex Skills</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <h2 class="sec" style="margin-bottom:0">Let’s work together</h2>
+        <p>I’m open to entry-level roles in software development, web development, Python development, testing and data analytics. Send me an email and I’ll reply soon.</p>
+        <div class="btns">
+          <a class="btn primary" href="mailto:guptadurgadevi@gmail.com">Email me</a>
+          <a class="btn ghost" href="https://github.com/gupta-Durgadevi" rel="noopener">View GitHub</a>
+        </div>
+      </div>
+      <footer>© 2026 Durgadevi Gupta</footer>
+    </section>
+  </main>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('theme');
+  btn.addEventListener('click',function(){
+    var root=document.documentElement;
+    var dark=root.getAttribute('data-theme')==='dark' ||
+      (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme',dark?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
